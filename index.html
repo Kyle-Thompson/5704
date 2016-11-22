@@ -34,8 +34,10 @@
 </font></h2>
 
 <hr noshade="noshade">
-<b><font color="#005128">Project Outline:</font></b> [at most
-1/2 page outline of what you intend to do]
+<b><font color="#005128">Project Outline:</font></b>
+As soon as parallel computing became more than an idea, a question had to be answered. How to get multiple threads to work on the same data? The solution at the time was to use locks and mutexes to prevent multiple threads from writing to the data, or reading while another is writing. While this works it is not without its issues. For instance in this model threads can enter deadlock by which they have a lock and are waiting for another which is currently possessed by a different thread that is waiting on the original threads lock. In this situation the threads will be stuck and simply wait until the process is terminated.
+Enter lock-free programming. This new paradigm is not one where, as the name might suggest, a thread never has to wait or that locks are not used, but rather one that simply guarantees progress in the program by at least one thread. The problem though is that lock-free programming is usually very hard and error prone so despite its benefits, it is rarely used.
+The goal of this paper then is to demonstrate a method for which any pointer based data structure can be easily made lock-free for writes and wait-free for reads by making the data structure persistent and leveraging the immutability of the structure at a given timestamp.
 <p><b><font color="#005128">Startup Paper(s):</font></b> [list your
 startup paper(s) and include a link to the PDF file]</p>
 
